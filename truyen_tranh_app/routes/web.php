@@ -75,3 +75,7 @@ Route::get('/profile', [PageController::class, 'profile'])->name('profile');
 Route::get('/ranking', [PageController::class, 'ranking'])->name('ranking');
 Route::get('/search', [PageController::class, 'search'])->name('search');
 Route::get('/test-cowl', [PageController::class, 'testCowl'])->name('test-cowl');
+
+Route::get('/crawler/novels', function () {
+    return \App\Models\Novel::select('title', 'status')->get();
+});
