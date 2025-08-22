@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\NovelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +77,3 @@ Route::get('/ranking', [PageController::class, 'ranking'])->name('ranking');
 Route::get('/search', [PageController::class, 'search'])->name('search');
 Route::get('/test-cowl', [PageController::class, 'testCowl'])->name('test-cowl');
 
-Route::get('/crawler/novels', function () {
-    return \App\Models\Novel::select('title', 'status')->get();
-});
